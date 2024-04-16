@@ -1,0 +1,80 @@
+@charset "UTF-8";
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to bottom right, #280153, #012753);
+  height: 100vh;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}
+
+section {
+  padding: 20px;
+  width: 80%;
+  max-width: 400px;
+  margin: auto;
+  color: white;
+  background-color: #787878;
+  box-shadow: 1px 1px 3px Black;
+  height: 400px;
+  border-radius: 10px;
+}
+
+p {
+  padding: 15px;
+}
+
+div.cad input {
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid #b5b5b6 1px;
+  padding: 3px 10px;
+  width: 95%;
+}
+div.cad input::-webkit-input-placeholder {
+  color: rgb(224, 222, 222);
+}
+
+div.cad input:-moz-placeholder { /* Firefox 18- */
+  color: rgb(224, 222, 222);  
+}
+
+div.cad input::-moz-placeholder {  /* Firefox 19+ */
+  color:rgb(224, 222, 222);  
+}
+
+div.cad input:-ms-input-placeholder {  
+  color: rgb(224, 222, 222);
+}
+
+div.btn {
+    padding-left: 15px;
+    margin-top: 20px;
+    color: #fff;
+}
+div.btn input {
+    height: 40px;
+    width: 47%;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: bold;
+    color: #fff;
+    background-color: rgba(54, 164, 80, 0.671);
+    margin: 2px;
+}
+div.btn > input#limpar {
+  background-color: #7e2b2b00;
+}

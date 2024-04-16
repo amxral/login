@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style-cad.css">
+  <title>Cadastro</title>
+</head>
+<body>
+  <main>
+    <h1>Cadastro</h1>
+    <section>
+      <div class="cad">
+      <form action="cadastro01.html" method="post" autocomplete="on">
+        <p>
+          <input type="text" name="nome" id="nome" placeholder="Nome" required/>
+        </p>
+        <p>
+          <input type="text" name="sobrenome" id="sobrenome" placeholder="Sobrenome" required />
+        </p>
+        <p>
+          <label for="nascimento">Data de Nascimento:</label>
+          <select name="nascimento" id="nasc">
+          </select>
+
+          <select name="mes" id="mes">
+          </select>
+
+          <select name="ano" id="anos">
+          </select>
+        </p>
+        <p>
+          <input type="tel" name="phone" id="phone" required placeholder="Número para contato *" min="10"/>
+        </p>
+        <p>
+          <input type="email" name="mail" id="mail" placeholder="E-mail *" required />
+        </p>
+        <p>
+          <input type="password" name="senha" id="senha" placeholder="Senha: mínimo 8 caracteres" minlength="8" required/>
+        </p>
+        </div>
+        
+        <div class="btn">
+          <input type="submit" name="envia" id="envia" value="Enviar"/>
+          <input type="reset" name="limpar" id="limpar" value="Limpar" />
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
