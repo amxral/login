@@ -9,14 +9,66 @@
         body {
             background-image: linear-gradient(to bottom right, #280153, #012753);
             height: 100vh;
+            position: relative;
             font-family: 'Arial Narrow Bold', sans-serif;
         }
-        sec
+        section {
+            background-color: white;
+            position: absolute;
+            max-width: 600px;
+            max-height: 300px;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px black;
+
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+        input {
+            display: block;
+            padding: 7px;
+        }
+        input#esq {
+            margin: auto;
+            margin-top: 5px;
+            background-color: transparent;
+            color: rgb(0, 0, 0);
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: solid #000000 2px;
+            padding: 3px 10px;
+            width: 88%;
+            outline: none;
+            outline-style: none;
+        }
+        input#btn {
+            margin: auto;
+            background-color: #ED2350;
+            color: white;
+            font-weight: bold;
+            width: 90%;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            cursor: pointer;
+        }
+        input#btn:hover {
+            background-color: #c5193e;
+        } 
+        a {
+            padding: 20px;
+        }
     </style>
 </head>
 <body>
     <section>
-
+        <h1>Esqueci minha senha</h1>
+        <p>Para redefirnir sua senha, informe o usuário ou o e-mail cadastrado na sua conta e lhe enviaremos um link com as instruções.</p>
+        <input type="email" name="esq" id="esq" placeholder="E-mail ou usuário">
+        <input type="submit" value="ENVIAR" id="btn">
+        <a href="index.html">Cancelar</a>
     </section>
 </body>
 </html>
