@@ -1,7 +1,8 @@
 <?php 
 
-   if(isset($_POST['submit'])) {
-  //   print_r($_POST['nascimento'] . '/' . $_POST['mes'] . '/' . $_POST['ano']);
+    if(isset($_POST['submit'])) {
+
+  //   print_r($_POST['data_nasc']);
   //   print_r('<br>');
   //   print_r($_POST['contato']);
   //   print_r('<br>');
@@ -14,14 +15,23 @@
     include_once('config.php');
 
     $nome = $_POST['nome'];
-    $sobrenome = $POST['sobrenome'];
-    $data_nasc = $_POST['nascimento'] . '/' . $_POST['mes'] . '/' . $_POST['ano'];
+    $sobrenome = $_POST['sobrenome'];
+    $dia = $_POST['dia'];
+    $mes = $_POST['mes'];
+    $ano = $_POST['ano']; 
+    $data_nasc = $dia . '-' . $mes . '-' . $ano; 
     $contato = $_POST['contato'];
     $email = $_POST['email'];
-    $senha =$_POST['senha'];
+    $senha = $_POST['senha'];
 
-    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,data_nasc,contato,email,senha) VALUES ('$nome','$sobrenome','$data_nasc','$contato','$email','$senha')");
-  
+    // $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,data_nasc,contato,email,senha) VALUES ('$nome','$sobrenome','$data_nasc','$contato','$email','$senha')");
+
+    $query = "INSERT INTO usuarios(nome, sobrenome, data_nasc, contato, email, senha) VALUES (?, ?, ?, ?, ?, ?)";
+    $stmt = mysqli_prepare($conexao, $query);
+    mysqli_stmt_bind_param($stmt, 'ssssss', $nome, $sobrenome, $data_nasc, $contato, $email, $senha);
+    mysqli_stmt_execute($stmt);
+
+    
    }
 ?>
 
@@ -39,7 +49,7 @@
     <h1>Cadastro</h1>
     <section>
       <div class="cad">
-      <form action="cadastro01.php" method="POST" autocomplete="on">
+      <form action="cadastro.php" method="POST" autocomplete="on">
         <p>
           <input type="text" name="nome" id="nome" placeholder="Nome" required/>
         </p>
@@ -48,7 +58,9 @@
         </p>
         <p>
           <label for="nascimento">Data de Nascimento:</label>
-          <select name="nascimento" id="nasc">
+          <!-- <input type="date" name="data_nasc" id="nasc"> -->
+          
+          <select name="dia" id="nasc">
           </select>
 
           <select name="mes" id="mes">
