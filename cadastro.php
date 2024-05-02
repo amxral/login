@@ -85,8 +85,9 @@
           <input type="reset" name="limpar" id="limpar" value="Limpar" />
         </div>
       </form>
+      <p  style="text-align: center;"><a style="color: white; text-align: center" href="index.html">Cancelar</a></p>
     </section>
-    <a href="index.html"><img src="voltar.png" alt="botao voltar" class="voltar"></a>
+    
   </main>
 
   <script src="script.js"></script>
