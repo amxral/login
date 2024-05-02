@@ -86,6 +86,7 @@
         </div>
       </form>
     </section>
+    <a href="index.html"><img src="voltar.png" alt="botao voltar" class="voltar"></a>
   </main>
 
   <script src="script.js"></script>

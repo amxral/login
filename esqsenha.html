@@ -66,8 +66,10 @@
     <section>
         <h1>Esqueci minha senha</h1>
         <p>Para redefirnir sua senha, informe o usuário ou o e-mail cadastrado na sua conta e lhe enviaremos um link com as instruções.</p>
-        <input type="email" name="esq" id="esq" placeholder="E-mail ou usuário">
-        <input type="submit" value="ENVIAR" id="btn">
+        <form action="esqsenha.html" method="post" autocomplete="on">
+            <input type="email" name="esq" id="esq" placeholder="E-mail ou usuário" autocomplete="on">
+            <input type="submit" value="ENVIAR" id="btn">
+        </form>
         <a href="index.html">Cancelar</a>
     </section>
 </body>
