@@ -60,13 +60,16 @@
           <label for="nascimento">Data de Nascimento:</label>
           <!-- <input type="date" name="data_nasc" id="nasc"> -->
           
-          <select name="dia" id="nasc">
+          <select name="dia" id="nasc" required>
+          <option value="" disabled selected>Dia</option>
           </select>
 
-          <select name="mes" id="mes">
+          <select name="mes" id="mes" required>
+          <option value="" disabled selected>Mês</option>
           </select>
 
-          <select name="ano" id="anos">
+          <select name="ano" id="anos" required>
+          <option value="" disabled selected>Ano</option>
           </select>
         </p>
         <p>
