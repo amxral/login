@@ -1,9 +1,9 @@
 <?php
 // Configurações do banco de dados
-$dbHost = 'sql209.infinityfree.com';
-$dbUsername = 'if0_36457040';
-$dbPassword = 'pYy54hCyJFroYt';
-$dbName = 'if0_36457040_formulario';
+$dbHost = 'localhost';
+$dbUsername = 'root';
+$dbPassword = '';
+$dbName = 'formulario';
 
 // Conexão com o banco de dados usando mysqli
 $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
@@ -32,20 +32,86 @@ $result = $stmt->get_result();
 
 // Verificar se encontramos uma linha correspondente
 if ($result->num_rows === 0) {
-    echo "Login ou senha inválidos";
-    echo "<br>";
-    echo "Volte e tente novamente";
+    header("Location: error.html");
+    exit();
 } else {
     echo '<html lang="pt-br">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="shortcut icon" href="icon.png" type="image/x-icon">
         <link rel="stylesheet" href="sistema.css">
+        <style>
+            @media screen and (max-width: 769px){
+                div#btn {
+                    width: 100%;
+                }
+                div#btn > button {
+                    width: 40%;
+                    padding: 5px;
+                    font-weight: bold;
+                    margin: 2px;
+                    color: rgb(0, 0, 0);
+                    background-color: rgb(4, 255, 0);
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 0.8em;
+                    cursor: pointer;
+                }
+            }
+            body {
+                background-image: linear-gradient( 85.2deg,  rgba(33,3,40,1) 7.5%, rgba(65,5,72,1) 88.7% );
+            }
+            header {
+                height: 50px;
+                display: flex; /* Flexbox para controle de layout */
+                justify-content: space-between; /* Espaço entre os elementos */
+                align-items: center; /* Alinhar verticalmente no centro */
+                padding: 10px; /* Espaçamento interno */
+                background-color: background-color: #4158D0;
+                background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%); /* Cor de fundo do cabeçalho */
+                margin-bottom: 40px;
+                box-shadow: 1px 0px 10px black;
+            }
+    
+            header p {
+                margin: 0; /* Remover margens para evitar deslocamento */
+            }
+            form#sair {
+                margin: 0; /* Remover margens para garantir alinhamento */
+            }
+            form#sair > button {
+                width: 100px;
+                height: 50px;
+                font-family: Arial, Helvetica, sans-serif;
+                background-color: rgb(217, 9, 9);
+                color: white;
+                border: none;
+                padding: 5px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+            }
+    
+            form#sair > button:hover {
+                text-decoration: underline;
+                background-color: brown;
+                width: 90px; /* Diminuir a largura ao passar o mouse */
+                height: 45px; /* Diminuir a altura ao passar o mouse */
+            }
+        </style>
         <title>Sistema Aquel</title>
     </head>
     <body>
-        <h1>Sistema Simulator - Aquel</h1>
+        <header>
+                <p>
+                <img src="icon.png" alt="icon site">
+                SISTEMA AQUEL-WUAZE 
+            </p>
+            <form id="sair" action="logout.php" method="POST">
+                <button type="submit">Encerrar Sessão</button>
+            </form>
+        </header>
+    
         <div id="main">
             
             <div id="btn">
@@ -100,47 +166,4 @@ if ($result->num_rows === 0) {
 // Fechar a declaração e a conexão
 $stmt->close();
 $conexao->close();
-?>
-
-// Verificar a conexão
-if ($conexao->connect_error) {
-    die("Erro de conexão: " . $conexao->connect_error);
-}
-
-// Obter dados do POST de maneira segura
-$email = isset($_POST['login']) ? $_POST['login'] : '';
-$senha = isset($_POST['senha']) ? $_POST['senha'] : '';
-
-// Usar prepared statements para prevenir injeção de SQL
-$stmt = $conexao->prepare("SELECT id, senha FROM usuarios WHERE email = ?");
-$stmt->bind_param("s", $email);
-$stmt->execute();
-$result = $stmt->get_result();
-
-// Se a consulta retornar resultados
-if ($result->num_rows > 0) {
-    $user = $result->fetch_assoc(); // Obter o resultado como array associativo
-
-    // Verifique se a senha é válida usando password_verify
-    if (password_verify($senha, $user['senha'])) { // Corrigido para usar a senha correta
-        // Se a senha for válida, configure a sessão
-        $_SESSION['logged_in'] = true;
-        $_SESSION['user_id'] = $user['id']; // Armazenar o ID do usuário para uso posterior
-
-        // Redirecionar para a página principal
-        header("Location: sistema.php"); //  nome da página
-        exit(); // Certifique-se de sair após redirecionar
-    } else {
-        // Se a senha estiver incorreta, redirecione para a página de erro
-        header("Location: error.html");
-        exit(); // Certifique-se de sair após redirecionar
-    }
-} else {
-    // Se não houver resultado para o email fornecido, redirecione para a página de erro
-    header("Location: error.html");
-    exit(); // Certifique-se de sair após redirecionar
-}
-
-$stmt->close(); // Fechar a declaração preparada
-$conexao->close(); // Fechar a conexão com o banco de dados
 ?>

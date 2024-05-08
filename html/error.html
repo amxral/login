@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
+    <title>Erro de Login</title>
+    <style>
+        body {
+            background-image: linear-gradient( 85.2deg,  rgba(33,3,40,1) 7.5%, rgba(65,5,72,1) 88.7% );
+            position: relative;
+            height: 97vh;
+        }
+        /* Estilo para a mensagem de erro */
+         div.error-message {
+                    transform: translate(-50%, -50%);
+                    font-size: 3em;
+                    top: 50%;
+                    left: 50%;
+                    position: absolute;
+                    background-color: #f44336;
+                    color: white;
+                    padding: 3px;
+                    border-radius: 35px;
+                    text-align: center;
+                    max-height: 70%;
+                    width: 90%;
+                    margin: 0px auto;
+                    font-family: Arial, sans-serif;
+                    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+             }
+
+        .error-message strong {
+            font-weight: bold; /* Texto em negrito para destaque */
+        }
+        @media screen and (max-width: 769px){
+            p {
+                margin: 0;
+            }
+            div.error-message {
+                transform: translate(-50%, -50%);
+                font-size: 6em;
+                top: 50%;
+                left: 50%;
+                position: absolute;
+                background-color: #f44336;
+                color: white;
+                padding: 13px;
+                border-radius: 35px;
+                text-align: center;
+                height: 600px;
+                width: 80%;
+                margin: 0px auto;
+                font-family: Arial, sans-serif;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+             }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mensagem de erro -->
+    <div class="error-message">
+        <p>
+        <strong>Erro:</strong> Login ou senha inválidos. Por favor, tente novamente.
+        <p>
+    </div>
+</body>
+</html>
