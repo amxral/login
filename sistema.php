@@ -16,7 +16,7 @@ if ($conexao->connect_error) {
 // echo "Conexão efetuada com sucesso";
 
 // Obter dados do POST de maneira segura
-$email = $_POST['login'];
+$email = $_POST['email'];
 $senha = $_POST['senha'];
 
 // Usar prepared statements para prevenir injeção de SQL
