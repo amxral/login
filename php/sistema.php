@@ -39,8 +39,8 @@ if ($result->num_rows === 0) {
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="icon.png" type="image/x-icon">
-        <link rel="stylesheet" href="sistema.css">
+        <link rel="shortcut icon" href="/image/icon.png" type="image/x-icon">
+        <link rel="stylesheet" href="/css/sistema.css">
         <style>
             @media screen and (max-width: 769px){
                 div#btn {
@@ -158,7 +158,7 @@ if ($result->num_rows === 0) {
         </div>
         <p id="ext"><a href="https://www.4devs.com.br/gerador_de_cep" target="_blank">Endereço Gerador Externo</a></p>
     
-        <script src="sistema.js"></script>
+        <script src="/javascript/sistema.js"></script>
     </body>
     </html>';
 }
