@@ -54,11 +54,15 @@
     </style>
 </head>
 <body>
+
     <h1>Cadastro Concluído!</h1>
+
     <div class="confirmation">
         <p>Seu cadastro foi concluído com sucesso!</p>
         <p>Obrigado por se juntar a nós.</p>
     </div>
+    
     <button class="btn" onclick="window.location.href='index.html'">Fazer Login</button>
+
 </body>
 </html>
