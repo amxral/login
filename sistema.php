@@ -98,6 +98,10 @@ if ($result->num_rows === 0) {
                 width: 90px; /* Diminuir a largura ao passar o mouse */
                 height: 45px; /* Diminuir a altura ao passar o mouse */
             }
+            p#ext > a:hover {
+                background-color: darkgreen;
+                text-decoration: none;
+            }
         </style>
         <title>Sistema Aquel</title>
     </head>

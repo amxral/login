@@ -104,5 +104,5 @@ p#ext > a {
 }
 p#ext > a:hover {
     background-color: darkgreen;
-    text-decoration: underline;
+    text-decoration: none;
 }
