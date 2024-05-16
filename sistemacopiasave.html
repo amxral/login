@@ -26,9 +26,9 @@
         }
         header {
             height: 50px;
+            align-items: start;
+            justify-content: space-between;
             display: flex; /* Flexbox para controle de layout */
-            justify-content: space-between; /* Espaço entre os elementos */
-            align-items: center; /* Alinhar verticalmente no centro */
             padding: 10px; /* Espaçamento interno */
             background-color: #4158D0;
             background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%); /* Cor de fundo do cabeçalho */
@@ -41,6 +41,7 @@
         }
         form#sair {
             margin: 0; /* Remover margens para garantir alinhamento */
+            display: inline-block;
         }
         form#sair  button {
             width: 100px;
@@ -54,6 +55,35 @@
             cursor: pointer;
             transition: all 0.3s ease; /* Transição suave para todas as propriedades */
         }
+        div#end {
+            display: inline-block;
+            align-items: start;
+            justify-items: end;
+            justify-content: end;
+            padding: 20px; 
+        }
+        header > a > button {
+            margin: 0;
+            display: inline;
+            margin-right: 50px;
+        }
+        header > div > a > button {
+            width: 100px;
+            height: 50px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(9, 134, 217);
+            color: white;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease; /* Transição suave para todas as propriedades */
+        }
+        header > div > a >button:hover {
+            background-color: rgb(42, 95, 165);
+            width: 90px; /* Diminuir a largura ao passar o mouse */
+            height: 45px; /* Diminuir a altura ao passar o mouse */
+        }
 
         form#sair  button:hover {
             text-decoration: underline;
@@ -66,16 +96,18 @@
 </head>
 <body>
     <header>
-            <p>
+        <p>
             <img src="icon.png" alt="icon site">
             SISTEMA AQUEL-WUAZE 
         </p>
-        <a href="conversor.html">
-            <button type="submit">Conversor Dólar</button>
-        </a>
-        <form id="sair" action="logout.php" method="POST">
-            <button type="submit">Encerrar Sessão</button>
-        </form>
+        <div class="end">
+            <a href="conversor.html">
+                <button type="submit">Conversor Dólar</button>
+            </a>
+            <form id="sair" action="logout.php" method="POST">
+                <button type="submit">Encerrar Sessão</button>
+            </form>
+        </div>
     </header>
 
     <div id="main">

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="conversor.css">
+    <title>Conversão de Moedas</title>
+    <style>
+        body {
+            background-image: linear-gradient(85.2deg, rgba(33,3,40,1) 7.5%, rgba(65,5,72,1) 88.7%);
+        }
+        h1 {
+            color: #fff;
+        }
+        label {
+            color: #fff;
+        }
+        form {
+            background-image: linear-gradient(85.2deg, rgba(33,3,40,1) 7.5%, rgba(65,5,72,1) 88.7%);
+        }
+        form > input[type=submit]:hover {
+            background-color: rgb(67, 14, 63);
+        }
+        form > input[type=submit] {
+            background-color: rgb(141, 29, 133);
+        }
+        button {
+            background-color: rgba(40,10,50,1);
+        }
+    </style>
+</head>
+<body>
+    <main style="background-color: rgba(0, 0, 0, 0.600);
+    ;">
+
+        <h1>Conversor de Moedas</h1>
+        <form action="conversao.php" method="get">
+            <label for="din">Quantos R$ você tem na carteira?</label>
+            <input type="number" name="din" id="din" step="0.01" min="0">
+            <input type="submit" value="Converter">
+        </form>
+        <button onclick="javascript:history.go(-1)">Voltar</button>
+    </main>
+</body>
+</html>
