@@ -1,5 +1,15 @@
 let intervaloCronometro; // Variável para armazenar o intervalo do cronômetro
 
+// Função para formatar um número como moeda brasileira
+function formatarNumeroBRL(numero) {
+    return numero.toLocaleString('pt-BR', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2,
+        style: 'currency',
+        currency: 'BRL'
+    });
+}
+
 function gerarNome() {
     // Limpar o intervalo do cronômetro se existir
     clearInterval(intervaloCronometro);
@@ -20,8 +30,8 @@ function gerarNome() {
                     const nomeAleatorio = nomes[Math.floor(Math.random() * nomes.length)];
                     // Selecionando uma empresa aleatória
                     const empresaAleatoria = empresas[Math.floor(Math.random() * empresas.length)];
-                    // Gerando um número aleatório entre 200 e 1 milhões
-                    const valorBruto = Math.random() * (1000000 - 200) + 200;
+                    // Gerando um número aleatório entre 200 e 900 mil
+                    const valorBruto = Math.random() * (900000 - 200) + 200;
 
                     // Calculando a taxa com base no valor bruto
                     const taxa = calcularTaxa(valorBruto);
@@ -34,16 +44,27 @@ function gerarNome() {
                     // Calculando a taxa com base no valor bruto e no intervalo de meses
                     const taxa1 = calcularTaxa(valorBruto, intervaloMeses);
 
-                    // Calculando o valor líquido
+                   // Calculando o valor líquido
                     const valorLiquido = valorBruto * (1 - taxa / 100);
+
+                    // Formatar os valores brutos e líquidos como moeda brasileira com dois números após a vírgula
+                    const valorBrutoFormatado = formatarNumeroBRL(parseFloat(valorBruto).toFixed(2));
+                    const valorLiquidoFormatado = formatarNumeroBRL(parseFloat(valorLiquido).toFixed(2));
 
                     // Exibindo as informações na página
                     document.getElementById('nomePessoal').innerText = nomeAleatorio;
                     document.getElementById('nomeEmpresa').innerText = empresaAleatoria;
-                    document.getElementById('valorBruto').innerText = formatarNumeroBRL(valorBruto);
-                    document.getElementById('valorLiquido').innerText = formatarNumeroBRL(valorLiquido);
+                    document.getElementById('valorBruto').innerText = valorBrutoFormatado;
+                    document.getElementById('valorLiquido').innerText = valorLiquidoFormatado;
                     document.getElementById('taxa').innerText = taxa.toFixed(2) + '%';
                     document.getElementById('dataAleatoria').innerText = `${formatarData(dataInicial)} - ${formatarData(dataFinal)}`;
+
+                    // Iniciar o cronômetro
+                    iniciarCronometro();
+
+                    // Formatar os valores brutos e líquidos como moeda brasileira com dois dígitos após a vírgula
+                    const valorBrutoFormatado = formatarNumeroBRL(valorBruto);
+                    const valorLiquidoFormatado = formatarNumeroBRL(valorLiquido); 
 
                     // Iniciar o cronômetro
                     iniciarCronometro();
@@ -79,11 +100,6 @@ function calcularIntervaloMeses(valorBruto) {
     } else {
         return Math.floor(Math.random() * 7) + 6; // Receber entre 6 e 12 meses
     }
-}
-
-// Função para formatar o número no formato BRL com duas casas decimais
-function formatarNumeroBRL(numero) {
-    return 'R$ ' + numero.toLocaleString('pt-BR', { minimumFractionDigits: 2 });
 }
 
 // Função para formatar a data
@@ -134,7 +150,7 @@ function iniciarCronometro() {
     intervaloCronometro = setInterval(atualizarCronometro, 1000);
 } 
 
-    // Função para pausar o cronômetro
+// Função para pausar o cronômetro
 function pausarCronometro() {
     clearInterval(intervaloCronometro);
 }
