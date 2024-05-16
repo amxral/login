@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -20,7 +22,7 @@
     span#olho {
       color: rgba(254,254,254,0.200);
     }
-</style>
+  </style>
 </head>
 <body>
   <section>
@@ -38,15 +40,19 @@
         <p>
           <span class="material-symbols-outlined">lock</span>
           <input type="password" name="senha" id="senha" required minlength="8" placeholder=" senha" style="border-style: none;" class="password-input"/>
-          <span class="material-symbols-outlined toggle-password" onclick="togglePasswordVisibility()"" id="olho">visibility</span>
+          <span class="material-symbols-outlined toggle-password" onclick="togglePasswordVisibility()" id="olho">visibility</span>
         </p>
 
       </div>
       <div id="btn">
 
-        <a href="cadastro.php"><input type="button" name="cadastro" id="cadastro" value="Cadastrar" class="btn"/></a>
-        <input type="submit" name="enviar" id="enviar" value="Entrar" class="btn"/>
-        <a href="esqsenha.html"><input type="button" name="esq" id="esq" value="Esqueci a senha" /></a>
+        <a href="cadastro.php">
+          <input type="button" name="cadastro" id="cadastro" value="Cadastrar" class="btn"/>
+        </a>
+          <input type="submit" name="enviar" id="enviar" value="Entrar" class="btn"/>
+        <a href="esqsenha.html">
+          <input type="button" name="esq" id="esq" value="Esqueci a senha" />
+        </a>
 
       </div>
     </form>
@@ -54,7 +60,6 @@
   </section>
 
   <!-- JAVASCRIPT -->
-
   <script>
     function togglePasswordVisibility() {
       const passwordField = document.getElementById('senha');

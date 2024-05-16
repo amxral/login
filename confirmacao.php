@@ -62,7 +62,7 @@
         <p>Obrigado por se juntar a nós.</p>
     </div>
     
-    <button class="btn" onclick="window.location.href='index.html'">Fazer Login</button>
+    <button class="btn" onclick="window.location.href='index.php'">Fazer Login</button>
 
 </body>
 </html>

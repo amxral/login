@@ -38,45 +38,6 @@ if (isset($_POST['submit'])) {
         }
     }
 }
-
-//     if(isset($_POST['submit'])) {
-
-//   //   print_r($_POST['data_nasc']);
-//   //   print_r('<br>');
-//   //   print_r($_POST['contato']);
-//   //   print_r('<br>');
-//   //   print_r($_POST['email']);
-//   //   print_r('<br>');
-//   //   print_r($_POST['nome']);
-//   //   print_r('<br>');
-//   //   print_r($_POST['sobrenome']);
-
-//     include_once('config.php');
-
-//     $nome = $_POST['nome'];
-//     $sobrenome = $_POST['sobrenome'];
-//     $dia = $_POST['dia'];
-//     $mes = $_POST['mes'];
-//     $ano = $_POST['ano']; 
-//     $data_nasc = $dia . '-' . $mes . '-' . $ano; 
-//     $contato = $_POST['contato'];
-//     $email = $_POST['email'];
-//     $senha = $_POST['senha'];
-
-//     // $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,sobrenome,data_nasc,contato,email,senha) VALUES ('$nome','$sobrenome','$data_nasc','$contato','$email','$senha')");
-
-//     $query = "INSERT INTO usuarios(nome, sobrenome, data_nasc, contato, email, senha) VALUES (?, ?, ?, ?, ?, ?)";
-//     $stmt = mysqli_prepare($conexao, $query);
-//     mysqli_stmt_bind_param($stmt, 'ssssss', $nome, $sobrenome, $data_nasc, $contato, $email, $senha);
-//     mysqli_stmt_execute($stmt);
-
-//     if (mysqli_stmt_affected_rows($stmt) > 0) {
-//         // Redireciona para uma página de confirmação
-//         header("Location: confirmacao.php");
-//         exit;
-//     }
-    
-//    }
 ?>
 
 <!DOCTYPE html>
